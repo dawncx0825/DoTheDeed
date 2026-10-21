@@ -8,43 +8,72 @@
     :root { color-scheme:light dark; --accent:#df9413; --muted:#6d6d72; }
     body { margin:0; font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
     main { max-width:760px; margin:auto; padding:44px 24px 72px; }
-    h1 { font-size:38px; line-height:1.15; } h2 { margin-top:34px; font-size:23px; }
-    a { color:var(--accent); } footer { margin-top:48px; color:var(--muted); border-top:1px solid rgba(127,127,127,.25); padding-top:20px; }
+    h1 { font-size:38px; line-height:1.15; } h2 { margin-top:34px; font-size:23px; } h3 { margin-top:22px; font-size:17px; }
+    a { color:var(--accent); } ul { padding-left:22px; } li { margin:6px 0; }
+    footer { margin-top:48px; color:var(--muted); border-top:1px solid rgba(127,127,127,.25); padding-top:20px; }
   </style>
 </head>
 <body><main>
   <p><a href="index.html">DoTheDeed</a></p>
   <h1>Support</h1>
   <p>Do it. Mark the moment on your map.</p>
-  <p>DoTheDeed helps you record completed activities with a time and place, explore your activity, and keep a backup of your records. It requires iOS 17 or later on iPhone.</p>
+  <p>DoTheDeed records completed activities with a time and a place, shows them on a map, and turns them into stats you can look back on. It requires iOS 17 or later on iPhone.</p>
 
   <h2>Contact</h2>
-  <p>For help, feedback, or privacy questions, email <a href="mailto:dawncx0825@gmail.com">dawncx0825@gmail.com</a>.</p>
-  <p>Please include your iOS version, app version, what you expected, and the steps that caused the problem. Remove personal information from screenshots. Do not post location histories or backup files in public GitHub issues.</p>
+  <p>For help, feedback or privacy questions, email <a href="mailto:dawncx0825@gmail.com">dawncx0825@gmail.com</a>. Please include your iOS version, the app version shown at the bottom of the sidebar, what you expected and the steps that led to the problem. Remove personal information from screenshots and never post location histories or backup files publicly.</p>
 
   <h2>Getting started</h2>
-  <p>Open the app and rename “My first thing” with the pencil button, or create an event from the sidebar. Tap Done and allow location access to save a record. Expand the bottom panel to switch between Records and Stats.</p>
+  <p>When you first open the app it asks for location access. Choose <strong>Allow While Using App</strong> and keep <strong>Precise Location</strong> on. Tap <strong>Done</strong> to save a record with the current time and place. Tap the pencil at the right of the event name to rename the event; typing replaces the name and Return saves it. Pull the bottom panel up to switch between Records and Stats. The layers button on the map switches between the standard and satellite map.</p>
 
-  <h2>Location is unavailable</h2>
-  <p>Check Settings → Privacy &amp; Security → Location Services and allow DoTheDeed access while using the app. Location can be unavailable indoors or when the device cannot obtain a fix. Existing records remain available when location is disabled; manual location entry is not currently supported.</p>
+  <h2>Location is unavailable or Precise Location is off</h2>
+  <p>If location is denied, Precise Location is off, the signal is poor or a fix takes too long, tapping Done opens the <strong>Add Manually</strong> page instead of failing. There you can search for a place, use your current position, tap the map to drop a pin, or save the record without a location. Use <strong>Open Settings</strong> on that page to allow location or turn Precise Location on; the app does not record approximate positions, because they would mark the wrong place.</p>
+
+  <h2>Editing or adding a record later</h2>
+  <p>Swipe left on a record and tap <strong>Edit</strong>, or long-press it. You can change the time (not into the future) and the location. Changing the location looks up the place name again; changing only the time keeps it. Forgot to tap Done? Use Add Manually from a failed Done, or edit the time of a record you add now.</p>
 
   <h2>A place name is missing</h2>
-  <p>A record can be saved with coordinates before its place name is available. Map loading and place-name lookup may need an internet connection. Reopen the app with a connection or use the retry option where shown.</p>
+  <p>A record is saved with its coordinates first; the place name arrives afterwards and needs an internet connection. Records whose name is still missing show a small orange mark and are retried when the app is open.</p>
 
   <h2>Why do I see only a few statistics?</h2>
-  <p>Stats adapt to your records. Additional modules appear as enough relevant data becomes available. Map cells represent recorded places, not complete route histories or coverage percentages.</p>
+  <p>Stats grow with your records. Additional modules appear once there is enough data for them to mean something. Map cells show places you recorded, not routes or a coverage percentage.</p>
 
-  <h2>Managing events</h2>
-  <p>Up to three events can be active. Long-press an event to archive it and retain its records, then create another. Restore archived events from the sidebar when an active slot is available.</p>
+  <h2>Events and archiving</h2>
+  <p>Up to three events can be active for free. Long-press an event in the sidebar to archive it: its records are kept and the slot is freed. Archived events can be opened read-only from the sidebar to see their records and counts. Restoring needs a free slot, or Plus, which removes the limit.</p>
+
+  <h2>Plus and Max</h2>
+  <p>Both are one-time purchases, not subscriptions. <strong>Plus</strong> includes unlimited active events, iCloud sync and custom places. <strong>Max</strong> includes everything in Plus and automatic check-in; if you already own Plus, the app offers a smaller upgrade purchase. Open the membership page from the sidebar card or whenever a locked feature asks for it. Use <strong>Restore</strong> on the membership page after reinstalling or switching devices, with the same Apple Account used to buy. Refunds are handled by Apple; after a refund the paid features lock again but your records stay.</p>
+
+  <h2>iCloud sync</h2>
+  <ul>
+    <li>Needs Plus or Max, the device signed in to iCloud, and the sync switch on the Account page turned on.</li>
+    <li>Syncs when the app opens, returns to the foreground, shortly after a change, and when you tap Sync now. It is not instant; open the app on the other device to pick up changes.</li>
+    <li>Changes made on two devices are merged field by field. Deleting a record on one device deletes it on the others; restoring a record from a backup keeps it even if it had been deleted before.</li>
+    <li>Your data is stored in your own iCloud account. The developer cannot see it or recover it for you.</li>
+  </ul>
+
+  <h2>Custom places (Plus)</h2>
+  <p>Open <strong>My Places</strong> in the sidebar to name places you visit, with a radius between 100 and 5,000 meters. New records inside a place get its name automatically; earlier records are not changed. Adjacent shops or different floors cannot be told apart reliably.</p>
+
+  <h2>Automatic check-in (Max)</h2>
+  <h3>Requirements</h3>
+  <p>Max, at least one custom place, the device signed in to iCloud, and after you enable a rule: Always location access and Precise Location. Tap the timer button on the map to set up a rule for the current event: choose places and a judgment duration (10 to 120 minutes), then <strong>Add timer and enable on this device</strong>.</p>
+  <h3>How it decides</h3>
+  <p>Two confirmed positions inside a chosen place, spaced by half the judgment duration, create one record. Staying longer does not create more; the app waits for a reliably confirmed departure before it can record the next visit. If you tap Done yourself during a visit, no automatic record is added for it.</p>
+  <h3>Nothing was recorded</h3>
+  <p>Common reasons: positions were not accurate enough (indoors, underground, tall buildings), you left before the second confirmation, this visit was already recorded, the rule is paused, Always or Precise Location was turned off, or iOS stopped delivering location after the app was force-quit or the phone restarted. Open the app again to resume; the status line on the automatic check-in page explains the current state.</p>
+  <h3>One device per account</h3>
+  <p>Only one device per iCloud account runs automatic check-in. It verifies this online about every 30 seconds; without a connection it keeps recording and verifies again when back online. To move to a new phone, enable a rule there and choose <strong>Take over on this device</strong>; the old phone stops the next time it connects. If the old phone is still running an older version of the app, disable automatic check-in there first.</p>
+  <h3>Battery</h3>
+  <p>Continuous background location increases battery use while a rule is enabled. Pause rules you are not using.</p>
 
   <h2>Language</h2>
-  <p>Open the sidebar and choose Language to select English, Simplified Chinese, or the device setting. Restart the app when prompted.</p>
+  <p>The app is available in English and Simplified Chinese. The first launch follows your device language; afterwards choose Language in the sidebar and restart the app when prompted.</p>
 
   <h2>Backing up and moving devices</h2>
-  <p>Use Export backup in the sidebar to save a JSON file. Keep it in a trusted location before removing the app or changing devices. Use Import backup to merge a compatible backup. The app does not automatically sync between devices. Export files contain location and timestamp details, so keep them private.</p>
+  <p>Use <strong>Export backup</strong> in the sidebar to save a JSON file and keep it somewhere safe before removing the app. <strong>Import backup</strong> merges a backup into the device without overwriting existing items; events beyond the free limit are imported as archived. Backups contain locations and timestamps, so keep them private. With Plus or Max, iCloud sync moves records between your devices automatically.</p>
 
-  <h2>Deleting records</h2>
-  <p>Swipe left or long-press a record to delete it. Archiving an event does not delete its records. Removing the app deletes its local data; exported copies and device backups must be managed separately. The developer cannot restore records that are no longer on your device or in a backup you control.</p>
+  <h2>Deleting records and data</h2>
+  <p>Swipe left or long-press a record to delete it. Archiving an event does not delete its records. Removing the app deletes its local data; exported backups and device backups must be managed separately. If sync was on, data already in iCloud stays there until you delete it in iOS Settings under your name, iCloud, Manage Account Storage. The developer cannot restore records that are no longer on your device, in iCloud or in a backup you control.</p>
   <footer><a href="privacy.html">Privacy Policy</a> · © 2026 Xiru An</footer>
 </main></body>
 </html>

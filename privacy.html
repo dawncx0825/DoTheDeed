@@ -10,41 +10,69 @@
     main { max-width:760px; margin:auto; padding:44px 24px 72px; }
     h1 { font-size:38px; line-height:1.15; } h2 { margin-top:36px; font-size:23px; }
     a { color:var(--accent); } .updated, footer { color:var(--muted); }
+    ul { padding-left:22px; } li { margin:6px 0; }
     footer { margin-top:48px; border-top:1px solid rgba(127,127,127,.25); padding-top:20px; }
   </style>
 </head>
 <body><main>
   <p><a href="index.html">DoTheDeed</a></p>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: September 20, 2026</p>
+  <p class="updated">Last updated: October 21, 2026</p>
   <p>DoTheDeed is provided by Xiru An. This policy describes how the iPhone app handles information.</p>
 
-  <h2>Your records</h2>
-  <p>DoTheDeed stores your events and records in the app’s storage on your device. Records may include event names, timestamps, geographic coordinates, location accuracy, time-zone information, and place names. The app uses this information to display your records, maps, and activity statistics.</p>
-  <p>You do not need an account. The app does not send your record database to a developer-operated server. It does not include advertising, third-party analytics SDKs, or cross-app tracking, and the developer does not sell your records.</p>
+  <h2>In short</h2>
+  <ul>
+    <li>There is no account to create. Your events and records live on your device.</li>
+    <li>If you buy Plus or Max and turn on iCloud sync, your records are stored in your own iCloud account. The developer has no access to them.</li>
+    <li>Automatic check-in (Max) uses background location only while you keep it switched on, and it stores only the resulting records, never your route.</li>
+    <li>Purchases are handled by Apple. The developer never receives your payment details or your Apple Account.</li>
+    <li>The app contains no advertising, no third-party analytics SDKs and no cross-app tracking. The developer does not sell or receive your records.</li>
+  </ul>
 
-  <h2>Location and Apple services</h2>
-  <p>When you create a location-based record, the app requests access to your location while using the app. With permission, the map may also display your current position. The app does not continuously record your route in the background.</p>
-  <p>Maps and place-name lookup use Apple’s MapKit and geocoding services. These services may communicate with Apple to load map content and translate coordinates into place names. Unresolved locations may be retried when the app is opened or when you request a retry. Apple handles data associated with its services under the <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.</p>
-  <p>You can change location access in iOS Settings. Without location access, you can view existing records, but creating a new location-based record is unavailable. The app currently does not offer manual location entry.</p>
+  <h2>What the app stores</h2>
+  <p>Events (the things you track) and records (each time you tapped Done). A record may include the time, your geographic coordinates and their accuracy, the time zone at that moment, place names returned by Apple’s geocoding service, the name of a custom place you created, whether the record was tapped, added by hand or recorded automatically, and when it was last edited.</p>
+  <p>With Plus you can create custom places (a name, a map position and a radius). With Max you can create automatic check-in rules (an event, the places it applies to and a judgment duration). The app also keeps small bookkeeping data used for syncing and for automatic check-in, such as version counters, deletion markers and the state of the current visit.</p>
+  <p>Everything above is kept in the app’s storage on your device. Apple’s device backup and restore services may include this data depending on your iOS settings.</p>
+
+  <h2>Location</h2>
+  <p>When you first open the app it asks for permission to use your location while you are using the app. Tapping Done takes a single position fix and saves it with the record. With permission, the map also shows your current position. Precise Location is required for records: an approximate position would mark the wrong place. If Precise Location is off, the app asks once for temporary precise access; if you decline, you can still add a record by hand.</p>
+  <p>Adding a record by hand lets you search for a place, use your current position or drop a pin on the map. You can also save a record without any location. Existing records can be edited to change their time or location.</p>
+  <p>Outside of automatic check-in, the app never tracks your location in the background.</p>
+
+  <h2>Automatic check-in (Max)</h2>
+  <p>Automatic check-in is off until you buy Max, create at least one custom place, choose places and a judgment duration for an event, and enable the rule on a device. It then requires Always location access and Precise Location, which iOS asks you for at that moment.</p>
+  <p>While a rule is enabled on this device, the app receives continuous location updates in the background, including when the screen is locked, so it can tell when you are inside one of the places you chose. Two confirmed positions, spaced by half the judgment duration, create one record. The app keeps only the state needed to make that decision and the resulting record. It does not store the position samples, your route, or where you were between visits. You can pause or disable a rule at any time, and revoking Always or Precise Location in iOS Settings stops it immediately. Continuous background location increases battery use.</p>
+  <p>Only one device per Apple Account runs automatic check-in. To enforce this, the app stores a small registration (a random identifier created at installation together with Apple’s per-developer vendor identifier) in your iCloud private database and re-verifies it about every 30 seconds while a rule is enabled. Without a network connection the device keeps recording and verifies again when it is back online. Automatic check-in therefore requires being signed in to iCloud.</p>
+
+  <h2>iCloud sync (Plus and Max)</h2>
+  <p>Sync is optional and controlled by a switch on the Account page. When it is on, the app stores a snapshot of your events, records, custom places, automatic rules and sync bookkeeping in the private database of your own iCloud account, using Apple’s CloudKit. The developer has no access to this database and operates no server of their own. Apple handles iCloud data under the <a href="https://www.apple.com/legal/privacy/">Apple Privacy Policy</a>.</p>
+  <p>Syncing happens when the app opens, when it returns to the foreground, shortly after you change something, and when you tap Sync now. Deleting a record on one device deletes it on your other devices after they sync. Turning sync off stops further uploads but does not remove what is already in iCloud. To remove the app’s data from iCloud, open iOS Settings, tap your name, then iCloud, Manage Account Storage, and delete DoTheDeed’s data. Which device last viewed which event is never synced.</p>
+
+  <h2>Purchases</h2>
+  <p>Plus and Max are one-time in-app purchases processed by Apple. The app checks your purchase on the device using Apple’s StoreKit and keeps no purchase records of its own. The developer does not receive your name, Apple Account, payment details or purchase history. If a purchase is refunded or revoked, the related features are locked again, but your existing events and records are left untouched. Use Restore Purchases after reinstalling or changing devices.</p>
+
+  <h2>Apple services</h2>
+  <p>Maps and satellite imagery are loaded from Apple’s MapKit. Place names are obtained by sending a record’s coordinates to Apple’s geocoding service; unresolved places may be retried when the app is opened. Place search, used when adding a record by hand or creating a custom place, sends your search text and the area shown on the map to Apple. Apple handles data associated with these services under its own privacy policy.</p>
 
   <h2>Backups and sharing</h2>
-  <p>You may choose to export a JSON backup through the system file interface. A backup contains your events and detailed records, including locations and timestamps. Exported backups are not password-encrypted by DoTheDeed. Keep them somewhere you trust.</p>
-  <p>You may preview and share a stats card using the system share interface. Cards omit recorded place names, coordinates, and dates. You choose whether to include your event name and area count. Services or people you choose to receive exported data handle it independently of DoTheDeed.</p>
-  <p>The app does not provide its own cloud synchronization. Depending on your settings, Apple’s device backup and restore services may include app data.</p>
+  <p>You may export a JSON backup through the system file interface. A backup contains your events, detailed records including locations and timestamps, custom places and automatic rules. It does not contain sync bookkeeping or the automatic check-in device registration. Exported backups are not encrypted by DoTheDeed; keep them somewhere you trust. Importing a backup merges it with what is already on the device and never overwrites existing items.</p>
+  <p>You may preview and share a stats card using the system share interface. Cards contain only totals, the number of days and optionally the event name and the number of areas. They omit place names, coordinates and dates. Services or people you choose to share with handle what you send independently of DoTheDeed.</p>
 
   <h2>External links</h2>
-  <p>The app may open a support, privacy, or social profile page in an in-app browser. Those sites receive the ordinary information sent when visiting a web page and operate under their own privacy terms. Opening an external page does not upload your DoTheDeed record database.</p>
+  <p>The app may open this website or a social profile page in an in-app browser. Those sites receive the ordinary information sent when visiting a web page and operate under their own privacy terms. Opening an external page does not upload your records.</p>
 
   <h2>Retention and deletion</h2>
-  <p>Records remain in app storage until you delete them or remove the app and its local data. Archiving an event retains its records; it is not deletion. To remove an individual record, swipe left or long-press it in the record list. To access an archived event’s records, restore the event first.</p>
-  <p>If a stored file cannot be read, the app may retain a recovery copy so it can be exported. Deleting the app removes its local storage, while offloading may retain it. Deleting local data does not delete backups you previously exported, system backups, or copies shared with other people. The developer cannot remotely access, restore, or delete your on-device records.</p>
+  <p>Records remain until you delete them or remove the app and its local data. To remove an individual record, swipe left or long-press it in the record list. Archiving an event keeps its records and lets you view them read-only; it is not deletion. If sync is on, deletions propagate to your other devices and to iCloud.</p>
+  <p>If a stored file cannot be read, the app keeps a recovery copy so it can be exported. Deleting the app removes its local storage, while offloading may retain it. Deleting local data does not delete backups you exported, system backups, copies you shared with other people, or data already stored in iCloud (see above). The developer cannot access, restore or delete your records on your behalf.</p>
+
+  <h2>Children</h2>
+  <p>DoTheDeed is not directed at children and does not knowingly collect information from children.</p>
 
   <h2>Contacting support</h2>
-  <p>If you email the developer, the developer receives your email address and whatever information you choose to send. It is used to respond and investigate issues, and retained only as long as needed for those purposes or applicable legal requirements. Do not send private location histories or backups unless you intentionally want them reviewed. You can request deletion of support correspondence by email, subject to applicable retention obligations.</p>
+  <p>If you email the developer, the developer receives your email address and whatever information you choose to send. It is used to respond and investigate issues, and retained only as long as needed for those purposes or applicable legal requirements. Do not send location histories or backups unless you intentionally want them reviewed. You can request deletion of support correspondence by email, subject to applicable retention obligations.</p>
 
   <h2>Policy updates and contact</h2>
-  <p>If the app’s data practices change, this policy will be updated. For privacy questions or support, contact <a href="mailto:dawncx0825@gmail.com">dawncx0825@gmail.com</a>.</p>
+  <p>If the app’s data practices change, this policy will be updated and the date above revised. For privacy questions or support, contact <a href="mailto:dawncx0825@gmail.com">dawncx0825@gmail.com</a>.</p>
   <footer>© 2026 Xiru An · <a href="support.html">Support</a></footer>
 </main></body>
 </html>
